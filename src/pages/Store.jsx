@@ -17,6 +17,19 @@ export const Store = () => {
     },[])
 
   return (
-    <div>Store</div>
+    <div>
+        <h1>Store</h1>
+        <div>
+          {
+            data.map((e) => (
+              <div key={e.id}>
+                <h4>{e.title}</h4>
+                <img src={e.thumbnail} alt="" />
+                <h4>{e.price}</h4>
+              </div>
+            ))
+          }
+        </div>
+    </div>
   )
 }
