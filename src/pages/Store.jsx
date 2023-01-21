@@ -1,10 +1,13 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import { BsFillCartCheckFill, BsFillCartPlusFill } from 'react-icons/bs'
 
 export const Store = () => {
 
     const [data, setData] = useState([]);
+    const [cart, setCart] = useState([]);
+
 
     useEffect(() => {
         const fetchApi = async () => {
@@ -26,6 +29,16 @@ export const Store = () => {
                 <h4>{e.title}</h4>
                 <img src={e.thumbnail} alt="" />
                 <h4>{e.price}</h4>
+                <button>
+                    {
+                      cart.some((itemCart) => itemCart.id == e.id ) ? (
+                        <BsFillCartCheckFill />
+                      ) : (
+                        <BsFillCartPlusFill />
+                      )
+
+                    }
+                </button>
               </div>
             ))
           }
