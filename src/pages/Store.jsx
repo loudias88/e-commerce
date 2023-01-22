@@ -19,6 +19,16 @@ export const Store = () => {
         fetchApi();
     },[])
 
+    const handleClick = (obj) => {
+      const element = cart.find((e) =>e.id === obj.id)
+      if(element) {
+        const arrFilter = cart.filter((e) => e.id !== obj.id)
+        setCart(arrFilter)
+      } else {
+        setCart([... cart,obj])
+      }
+    }
+
   return (
     <div>
         <h1>Store</h1>
@@ -29,9 +39,9 @@ export const Store = () => {
                 <h4>{e.title}</h4>
                 <img src={e.thumbnail} alt="" />
                 <h4>{e.price}</h4>
-                <button>
+                <button onClick={() => handleClick(e)}>
                     {
-                      cart.some((itemCart) => itemCart.id == e.id ) ? (
+                      cart.some((itemCart) => itemCart.id === e.id ) ? (
                         <BsFillCartCheckFill />
                       ) : (
                         <BsFillCartPlusFill />
