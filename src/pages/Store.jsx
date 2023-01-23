@@ -2,11 +2,12 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { BsFillCartCheckFill, BsFillCartPlusFill } from 'react-icons/bs'
-
+import { getItem , setItem } from '../services/LocalStorageFuncs'
+import { Link } from 'react-router-dom'
 export const Store = () => {
 
     const [data, setData] = useState([]);
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState( getItem('carrinhoLoja') || []);
 
 
     useEffect(() => {
@@ -24,13 +25,16 @@ export const Store = () => {
       if(element) {
         const arrFilter = cart.filter((e) => e.id !== obj.id)
         setCart(arrFilter)
+        setItem('carrinhoLoja',arrFilter)
       } else {
         setCart([... cart,obj])
+        setItem('carrinhoLoja',[... cart,obj])
       }
     }
 
   return (
     <div>
+        <Link to='/cart'>Cart</Link>
         <h1>Store</h1>
         <div>
           {
