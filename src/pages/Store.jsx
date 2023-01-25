@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { BsFillCartCheckFill, BsFillCartPlusFill } from 'react-icons/bs'
 import { getItem , setItem } from '../services/LocalStorageFuncs'
-import { Link } from 'react-router-dom'
 import { ProductsArea } from '../css/style'
 import { Header } from '../components/Header'
 
