@@ -12,7 +12,7 @@
 Luís Heleno.
 
 ## Descrição e objetivo do projeto
-O objetivo do projeto foi criar um sistema de e-commerce com React JS fazendo uma requisição api do Mercado Livre e utilizar algumas funções do react como useEffect, useState, localStorage, react icons e styled components.
+O objetivo do projeto foi criar um sistema de e-commerce com React JS fazendo uma requisição api do Mercado Livre e utilizar algumas funções do React como useEffect, useState, localStorage, react icons e styled components.
 ###
 
 
