@@ -29,8 +29,8 @@ export const Store = () => {
         setCart(arrFilter)
         setItem('carrinhoLoja',arrFilter)
       } else {
-        setCart([... cart,obj])
-        setItem('carrinhoLoja',[... cart,obj])
+        setCart([...cart,obj])
+        setItem('carrinhoLoja',[...cart,obj])
       }
     }
 
